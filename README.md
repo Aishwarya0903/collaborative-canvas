@@ -4,6 +4,10 @@ A real-time multi-user drawing application where multiple users can draw on the 
 
 The application uses HTML5 Canvas for drawing and Socket.IO for real-time communication between connected users.
 
+## Live Demo
+
+🔗 https://collaborative-canvas-p1sm.onrender.com
+
 ## Features
 
 - Real-time collaborative drawing
