@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Collaborative Canvas</title>
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div>
+        <h1>Collaborative Canvas</h1>
+        <p>Draw together in real time</p>
+      </div>
+
+      <div class="connection-status">
+        <span class="status-dot"></span>
+        <span id="connection-text">Connecting...</span>
+      </div>
+    </header>
+
+
+    <main class="workspace">
+
+      <aside class="toolbar">
+
+        <button id="brush-btn" class="tool-button active">
+          🖌 Brush
+        </button>
+
+        <button id="eraser-btn" class="tool-button">
+          🧽 Eraser
+        </button>
+
+
+        <div class="tool-section">
+
+          <label for="color-picker">Color</label>
+
+          <input
+            type="color"
+            id="color-picker"
+            value="#2563eb"
+          />
+
+        </div>
+
+
+        <div class="tool-section">
+
+          <label for="stroke-width">Brush size</label>
+
+          <input
+            type="range"
+            id="stroke-width"
+            min="1"
+            max="40"
+            value="5"
+          />
+
+          <span id="stroke-width-value">5px</span>
+
+        </div>
+
+
+        <div class="tool-section">
+
+          <p class="section-title">Actions</p>
+
+          <button id="undo-btn" class="action-button">
+            ↩ Undo
+          </button>
+
+          <button id="redo-btn" class="action-button">
+            ↪ Redo
+          </button>
+
+          <button id="clear-btn" class="action-button danger">
+            🗑 Clear Canvas
+          </button>
+
+        </div>
+
+      </aside>
+
+
+      <section class="canvas-section">
+
+        <div class="canvas-wrapper">
+
+          <canvas id="drawing-canvas"></canvas>
+
+          <div id="cursor-layer"></div>
+
+        </div>
+
+      </section>
+
+
+      <aside class="users-panel">
+
+        <div class="users-header">
+          <h2>Online Users</h2>
+          <span id="user-count">0</span>
+        </div>
+
+        <div id="users-list"></div>
+
+      </aside>
+
+    </main>
+
+  </div>
+<script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
